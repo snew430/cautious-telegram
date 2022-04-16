@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
-import Nav from './components/Nav';
-import About from './components/About';
-import Gallery from './components/Gallery';
+import React, { useState } from "react";
+import Nav from "./components/Nav";
+import About from "./components/About";
+import Gallery from "./components/Gallery";
+import ContactForm from "./components/Contact";
 
 function App() {
-    const [categories] = useState([
+  const [categories] = useState([
     {
       name: "commercial",
       description:
@@ -18,16 +19,18 @@ function App() {
     },
   ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0])
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
     <div>
-      <Nav 
-      categories = {categories}
-      setCurrentCategory={setCurrentCategory}
-      currentCategory={currentCategory}/>
+      <Nav
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+      />
       <main>
-        <Gallery currentCategory={currentCategory}/>
+        <ContactForm />
+        <Gallery currentCategory={currentCategory} />
         <About />
       </main>
     </div>
