@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ currentPhoto }) => {
+const Modal = ({ currentPhoto, onClose }) => {
   const { name, category, description, index } = currentPhoto;
 
   return (
@@ -12,7 +12,9 @@ const Modal = ({ currentPhoto }) => {
           alt="current category"
         />
         <p>{description}</p>
-        <button type="button">Close</button>
+        <button type="button" onClick={onClose}>
+          Close
+        </button>
       </div>
     </div>
   );
